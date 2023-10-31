@@ -9,7 +9,7 @@ import { AuthGuard } from '@nestjs/passport';
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
 
-  @Post()
+  @Post()  
   create(@Body() createCategoryDto: CreateCategoryDto) {
     return this.categoryService.create(createCategoryDto);
   }
@@ -24,7 +24,7 @@ export class CategoryController {
     return this.categoryService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch(':id')  
   update(
     @Param('id') id: string,
     @Body() updateCategoryDto: UpdateCategoryDto,
